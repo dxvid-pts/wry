@@ -926,7 +926,7 @@ impl InnerWebView {
       // WebView2 supports non-standard protocols only on Windows 10+, so we have to use this workaround
       // See https://github.com/MicrosoftEdge/WebView2Feedback/issues/73
       let work_around_uri = custom_protocol_workaround::work_around_uri_prefix(http_or_https, name);
-      let filter = HSTRING::from(format!("{work_around_uri}*"));
+      let filter = HSTRING::from(format!("{work_around_uri}*/*"));
 
       // If WebView2 version is high enough, use the new API to add the filter to allow Shared Workers and
       // iframes to work with custom protocols
